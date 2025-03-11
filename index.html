@@ -7,6 +7,7 @@
     <meta name="keywords" content="transporte, cargas, logística, almacenamiento, cotización">
     <title>Transporte de Cargas Generales</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -27,6 +28,7 @@
                     <li><a href="#servicios">Servicios</a></li>
                     <li><a href="#nosotros">Nosotros</a></li>
                     <li><a href="#cotizacion">Cotización</a></li>
+                    <li><a href="#ubicaciones">Ubicaciones</a></li>
                 </ul>
             </nav>
         </div>
@@ -69,10 +71,73 @@
     <section id="nosotros" class="about">
         <div class="container">
             <h2>Nosotros</h2>
-            <p>Somos una empresa con más de 10 años de experiencia en el transporte de cargas generales. Nuestro compromiso es ofrecer un servicio confiable y de calidad.</p>
+            <p>En Transporte Cardaci, somos mucho más que una empresa de transporte; somos una familia comprometida con la excelencia y la confianza. Aunque somos una empresa joven, nuestra experiencia en el rubro del transporte de mercadería nos ha permitido consolidarnos como un referente en Mar del Plata.
+
+                Nuestra dedicación, profesionalismo y atención al detalle han hecho que importantes empresas de la región confíen en nosotros para llevar sus productos de manera segura, eficiente y puntual. En Transporte cardaci, entendemos que cada envío es único, y por eso nos esforzamos por ofrecer un servicio personalizado que supere las expectativas de nuestros clientes.
+                
+                Con un equipo comprometido, estamos listos para seguir creciendo y brindando soluciones logísticas que marquen la diferencia. En Transporte Cardaci, no solo transportamos mercadería; transportamos confianza.</p>
             <a href="#cotizacion" class="btn pulse">Solicitar Cotización</a>
         </div>
     </section>
+
+    <!-- Sección Ubicaciones -->
+<section id="ubicaciones" class="locations">
+    <div class="container">
+        <h2>Nuestras Ubicaciones</h2>
+        <div class="location-list">
+            <!-- Ubicación 1: Mar del Plata -->
+            <div class="location-item">
+                <h3>Mar del Plata</h3>
+                <p>Dirección: Juan Diaz de Solis 8217</p>
+                <p>Teléfono: (0223) 3467529</p>
+                <!-- Mapa de Google Maps -->
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3143.6558427693976!2d-57.5893020247428!3d-38.008487245190885!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9584dece23a0bf69%3A0xae6d5de25d1db2cb!2sJuan%20Diaz%20de%20Solis%208217%2C%20B7600%20Mar%20del%20Plata%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1741716050142!5m2!1ses!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+
+            <!-- Ubicación 2: Buenos Aires -->
+            <div class="location-item">
+                <h3>Buenos Aires</h3>
+                <p>Dirección: Ferre 2035 </p>
+                <p>Teléfono: (223) 5819511</p>
+                <!-- Mapa de Google Maps -->
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3281.7842291317993!2d-58.42719962494041!3d-34.660151760479565!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccb84c855267f%3A0x3d333db1ce872653!2sComuna%204%2C%20Ferr%C3%A9%202035%2C%20C1437FUM%20Cdad.%20Aut%C3%B3noma%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1741717409864!5m2!1ses!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Sección Localidades -->
+<section id="localidades" class="localities">
+    <div class="container">
+        <h2>Localidades que Atendemos</h2>
+        <div class="locality-list">
+            <ul>
+                <li>
+                    <i class="fas fa-map-marker-alt"></i> <!-- Ícono de FontAwesome -->
+                    <span>Mar del Plata</span>
+                </li>
+                <li>
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Buenos Aires</span>
+                </li>
+                <li>
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Miramar</span>
+                </li>
+                <li>
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Balcarce</span>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</section>
 
     <!-- Sección Cotización -->
     <section id="cotizacion" class="quote">
@@ -84,6 +149,9 @@
 
                 <label for="email">Correo Electrónico:</label>
                 <input type="email" id="email" name="email" placeholder="Ingresa tu correo electrónico" required>
+
+                <label for="phone">Teléfono:</label>
+                <input type="tel" id="phone" name="phone" placeholder="Ingresa tu número de teléfono" required>
 
                 <label for="origin">Origen:</label>
                 <input type="text" id="origin" name="origin" placeholder="Ciudad o dirección de origen" required>

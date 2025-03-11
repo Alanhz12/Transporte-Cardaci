@@ -10,29 +10,23 @@ hamburger.addEventListener('click', () => {
 });
 
 // Cerrar el menú al hacer clic en un enlace
-const navLinks = document.querySelectorAll('#nav-menu a');
-
-navLinks.forEach((link) => {
-    link.addEventListener('click', () => {
+document.addEventListener('click', (e) => {
+    if (e.target.matches('#nav-menu a')) {
         navMenu.classList.remove('active');
         hamburger.classList.remove('active');
         hamburger.setAttribute('aria-expanded', 'false');
-    });
+    }
 });
 
 // Scroll suave para los enlaces del menú
-navLinks.forEach((link) => {
+document.querySelectorAll('#nav-menu a').forEach(link => {
     link.addEventListener('click', (e) => {
         e.preventDefault();
         const targetId = link.getAttribute('href');
         const targetSection = document.querySelector(targetId);
 
-        // Cierra el menú antes de hacer scroll
-        navMenu.classList.remove('active');
-        hamburger.classList.remove('active');
-
         setTimeout(() => {
-            targetSection.scrollIntoView({ behavior: 'smooth' });
+            targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }, 300);
     });
 });
@@ -43,7 +37,9 @@ const serviceItems = document.querySelectorAll('.service-item');
 const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
         if (entry.isIntersecting) {
-            entry.target.classList.add('fade-in');
+            setTimeout(() => {
+                entry.target.classList.add('fade-in');
+            }, 100);
             observer.unobserve(entry.target);
         }
     });
@@ -56,21 +52,46 @@ serviceItems.forEach((item) => {
 // Validación del formulario de cotización
 document.getElementById('quote-form').addEventListener('submit', function (e) {
     e.preventDefault();
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const origin = document.getElementById('origin').value;
-    const destination = document.getElementById('destination').value;
-    const details = document.getElementById('details').value;
+    const name = document.getElementById('name');
+    const email = document.getElementById('email');
+    const phone = document.getElementById('phone');
+    const origin = document.getElementById('origin');
+    const destination = document.getElementById('destination');
+    const details = document.getElementById('details');
 
-    if (!name || !email || !origin || !destination || !details) {
-        alert('Por favor, completa todos los campos del formulario.');
-        return;
+    let isValid = true;
+
+    if (!name.value) {
+        showError(name, 'Por favor, ingresa tu nombre.');
+        isValid = false;
     }
 
-    if (!validateEmail(email)) {
-        alert('Por favor, ingresa un correo electrónico válido.');
-        return;
+    if (!email.value || !validateEmail(email.value)) {
+        showError(email, 'Por favor, ingresa un correo electrónico válido.');
+        isValid = false;
     }
+
+    if (!phone.value) {
+        showError(phone, 'Por favor, ingresa tu número de teléfono.');
+        isValid = false;
+    }
+
+    if (!origin.value) {
+        showError(origin, 'Por favor, ingresa el origen.');
+        isValid = false;
+    }
+
+    if (!destination.value) {
+        showError(destination, 'Por favor, ingresa el destino.');
+        isValid = false;
+    }
+
+    if (!details.value) {
+        showError(details, 'Por favor, describe los detalles de la carga.');
+        isValid = false;
+    }
+
+    if (!isValid) return;
 
     const submitButton = this.querySelector('button[type="submit"]');
     submitButton.disabled = true;
@@ -111,6 +132,14 @@ function validateEmail(email) {
     return regex.test(email);
 }
 
+// Mostrar mensajes de error
+function showError(input, message) {
+    const errorElement = document.createElement('div');
+    errorElement.className = 'error-message';
+    errorElement.textContent = message;
+    input.parentNode.insertBefore(errorElement, input.nextSibling);
+}
+
 // Modal de éxito
 const successModal = document.getElementById('success-modal');
 const closeModal = document.querySelector('.close');
@@ -131,3 +160,11 @@ window.addEventListener('click', (e) => {
         }, 300);
     }
 });
+
+// Cerrar modal automáticamente después de 3 segundos
+setTimeout(() => {
+    successModal.style.opacity = '0';
+    setTimeout(() => {
+        successModal.style.display = 'none';
+    }, 300);
+}, 3000);
