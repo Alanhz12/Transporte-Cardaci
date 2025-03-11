@@ -61,6 +61,8 @@ nav ul li a:hover {
     display: none;
     flex-direction: column;
     cursor: pointer;
+    background: none;
+    border: none;
 }
 
 .hamburger span {
@@ -114,7 +116,7 @@ nav ul li a:hover {
 /* Animación de botones */
 @keyframes pulse {
     0% { transform: scale(1); }
-    50% { transform: scale(1.05); }
+    50% { transform: scale(1.03); }
     100% { transform: scale(1); }
 }
 
@@ -142,6 +144,7 @@ nav ul li a:hover {
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    will-change: opacity, transform;
 }
 
 .service-item.fade-in {
@@ -193,60 +196,73 @@ nav ul li a:hover {
     margin: 0 auto;
     display: flex;
     flex-direction: column;
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
-.quote form input, .quote form textarea {
+.quote form label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #555;
+    margin-bottom: 8px;
+}
+
+.quote form input,
+.quote form textarea {
+    width: 100%;
+    padding: 12px;
     margin-bottom: 20px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #333;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.quote form input:focus,
+.quote form textarea:focus {
+    border-color: #ff6600;
+    outline: none;
+    box-shadow: 0 0 8px rgba(255, 102, 0, 0.2);
+}
+
+.quote form textarea {
+    resize: vertical;
+    min-height: 120px;
 }
 
 .quote form button {
     background: #ff6600;
     color: #fff;
-    padding: 10px 20px;
+    padding: 12px 20px;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
     cursor: pointer;
-    animation: pulse 2s infinite;
+    transition: background 0.3s ease, transform 0.2s ease;
 }
 
-/* Contacto */
-.contact {
-    padding: 50px 0;
-    background: #f9f9f9;
-    text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+.quote form button:hover {
+    background: #e65c00;
+    transform: translateY(-2px);
 }
 
-.contact form {
-    max-width: 600px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
+.quote form button:active {
+    transform: translateY(0);
 }
 
-.contact form input, .contact form textarea {
-    margin-bottom: 20px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-.contact form button {
-    background: #ff6600;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    animation: pulse 2s infinite;
+.quote form button[disabled] {
+    background: #ccc;
+    cursor: not-allowed;
+    transform: none;
 }
 
 /* Footer */
 footer {
-    background: #333;
+    background: #222;
     color: #fff;
     padding: 20px 0;
     text-align: center;
@@ -258,6 +274,7 @@ footer .social-links a {
     margin: 0 10px;
     text-decoration: none;
 }
+
 /* Estilos para el modal */
 .modal {
     display: none;
@@ -270,16 +287,29 @@ footer .social-links a {
     background-color: rgba(0, 0, 0, 0.5);
     justify-content: center;
     align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.modal.active {
+    display: flex;
+    opacity: 1;
 }
 
 .modal-content {
     background: #fff;
     padding: 20px;
-    border-radius: 10px;
+    border-radius: 12px;
     text-align: center;
     max-width: 400px;
     width: 90%;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transform: translateY(-20px);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.modal.active .modal-content {
+    transform: translateY(0);
 }
 
 .modal-content h2 {
@@ -303,6 +333,7 @@ footer .social-links a {
 .close:hover {
     color: #ff6600;
 }
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .hamburger {
