@@ -683,6 +683,7 @@ footer {
 
 /* ==================== Responsive Design ==================== */
 @media (max-width: 768px) {
+    /* Ajustes generales */
     .hamburger {
         display: flex;
     }
@@ -721,6 +722,14 @@ footer {
 
     .quote form {
         width: 90%;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        width: 100%;
+        box-sizing: border-box;
     }
 
     .locality-list ul li {
@@ -763,19 +772,35 @@ footer {
         width: calc(50% - 20px);
     }
 
+    /* Ajustes específicos para la sección Ubicaciones */
+    .location-list {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Centra las tarjetas horizontalmente */
+        gap: 20px;
+        width: 100%; /* Asegura que el contenedor ocupe el 100% del ancho */
+        padding: 0 15px; /* Añade un padding para evitar que las tarjetas toquen los bordes */
+        box-sizing: border-box; /* Incluye el padding en el ancho total */
+    }
+
     .location-item {
-        width: 100%;
+        width: 100%; /* Ocupa el 100% del ancho disponible */
+        max-width: 500px; /* Limita el ancho máximo de las tarjetas */
+        margin: 0 auto; /* Centra las tarjetas horizontalmente */
+        padding: 15px; /* Espaciado interno */
+        box-sizing: border-box; /* Incluye el padding en el ancho total */
+    }
+
+    .map-container iframe {
+        width: 100%; /* Ocupa el 100% del ancho del contenedor */
+        height: 150px; /* Altura fija para el mapa */
+        border: 0;
     }
 }
 
 @media (max-width: 480px) {
     .service-item, .locality-list ul li {
         width: 100%;
-    }
-}
-@media (max-width: 768px) {
-    .quote form {
-        padding: 20px;
     }
 
     .quote h2 {
@@ -784,33 +809,5 @@ footer {
 
     .quote .subtitle {
         font-size: 1rem;
-    }
-}/* ==================== Responsive Design ==================== */
-@media (max-width: 768px) {
-    /* Ajustes para el formulario */
-    .quote form {
-        padding: 20px;
-        width: 100%;
-        box-sizing: border-box;
-    }
-
-    .form-group input,
-    .form-group textarea {
-        width: 100%;
-        box-sizing: border-box;
-    }
-
-    /* Ajustes para los mapas */
-    .location-list {
-        grid-template-columns: 1fr;
-    }
-
-    .location-item {
-        width: 100%;
-        margin-bottom: 20px;
-    }
-
-    .map-container iframe {
-        height: 150px;
     }
 }
