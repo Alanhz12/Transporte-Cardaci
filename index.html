@@ -127,30 +127,36 @@
         </div>
     </div>
 </section>
-    <!-- Sección Ubicaciones -->
+
+ <!-- Sección Ubicaciones -->
 <section id="ubicaciones" class="locations">
     <div class="container">
         <h2>Nuestras Ubicaciones</h2>
+        <p class="subtitle">Encuéntranos en estas ciudades estratégicas</p>
         <div class="location-list">
             <!-- Ubicación 1: Mar del Plata -->
             <div class="location-item">
-                <h3>Mar del Plata</h3>
-                <p>Dirección: Juan Diaz de Solis 8217</p>
-                <p>Teléfono: (0223) 3467529</p>
-                <!-- Mapa de Google Maps -->
+                <div class="location-header">
+                    <h3>Mar del Plata</h3>
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <p><strong>Dirección:</strong>Juan Diaz de Solis 8217 </p>
+                <p><strong>Teléfono:</strong> (0223) 3467529</p>
                 <div class="map-container">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3143.6558427693976!2d-57.5893020247428!3d-38.008487245190885!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9584dece23a0bf69%3A0xae6d5de25d1db2cb!2sJuan%20Diaz%20de%20Solis%208217%2C%20B7600%20Mar%20del%20Plata%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1741716050142!5m2!1ses!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3143.6558427693976!2d-57.58930202474276!3d-38.008487245190885!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9584dece23a0bf69%3A0xae6d5de25d1db2cb!2sJuan%20Diaz%20de%20Solis%208217%2C%20B7600%20Mar%20del%20Plata%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1741804152214!5m2!1ses!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
 
             <!-- Ubicación 2: Buenos Aires -->
             <div class="location-item">
-                <h3>Buenos Aires</h3>
-                <p>Dirección: Ferre 2035 </p>
-                <p>Teléfono: (223) 5819511</p>
-                <!-- Mapa de Google Maps -->
+                <div class="location-header">
+                    <h3>Buenos Aires</h3>
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <p><strong>Dirección:</strong>  Ferré 2035</p>
+                <p><strong>Teléfono:</strong> (223) 5819511</p>
                 <div class="map-container">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3281.7842291317993!2d-58.42719962494041!3d-34.660151760479565!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccb84c855267f%3A0x3d333db1ce872653!2sComuna%204%2C%20Ferr%C3%A9%202035%2C%20C1437FUM%20Cdad.%20Aut%C3%B3noma%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1741717409864!5m2!1ses!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3281.7840533169306!2d-58.42462469999999!3d-34.66015619999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccb84c855267f%3A0x3d333db1ce872653!2sComuna%204%2C%20Ferr%C3%A9%202035%2C%20C1437FUM%20Cdad.%20Aut%C3%B3noma%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1741804358129!5m2!1ses!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
         </div>
@@ -186,33 +192,40 @@
     </div>
 </section>
 
-    <!-- Sección Cotización -->
-    <section id="cotizacion" class="quote">
-        <div class="container">
-            <h2>Solicitud de Cotización</h2>
-            <form id="quote-form" action="https://formspree.io/f/xoveqlyk" method="POST">
+   <!-- Sección Cotización -->
+<section id="cotizacion" class="quote">
+    <div class="container">
+        <h2>Solicitud de Cotización</h2>
+        <p class="subtitle">Completa el formulario y nos pondremos en contacto contigo.</p>
+        <form id="quote-form" action="https://formspree.io/f/xoveqlyk" method="POST">
+            <div class="form-group">
                 <label for="name">Nombre:</label>
                 <input type="text" id="name" name="name" placeholder="Ingresa tu nombre" required>
-
+            </div>
+            <div class="form-group">
                 <label for="email">Correo Electrónico:</label>
                 <input type="email" id="email" name="email" placeholder="Ingresa tu correo electrónico" required>
-
+            </div>
+            <div class="form-group">
                 <label for="phone">Teléfono:</label>
                 <input type="tel" id="phone" name="phone" placeholder="Ingresa tu número de teléfono" required>
-
+            </div>
+            <div class="form-group">
                 <label for="origin">Origen:</label>
                 <input type="text" id="origin" name="origin" placeholder="Ciudad o dirección de origen" required>
-
+            </div>
+            <div class="form-group">
                 <label for="destination">Destino:</label>
                 <input type="text" id="destination" name="destination" placeholder="Ciudad o dirección de destino" required>
-
+            </div>
+            <div class="form-group">
                 <label for="details">Detalles de la carga:</label>
                 <textarea id="details" name="details" placeholder="Describe los detalles de tu carga (peso, dimensiones, tipo de mercancía, etc.)" required></textarea>
-
-                <button type="submit" class="btn">Enviar Solicitud</button>
-            </form>
-        </div>
-    </section>
+            </div>
+            <button type="submit" class="btn">Enviar Solicitud</button>
+        </form>
+    </div>
+</section>
 
     <!-- Footer -->
     <footer>

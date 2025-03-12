@@ -4,7 +4,7 @@
     --font-family: 'Roboto', sans-serif;
 }
 
-/* Estilos generales */
+/* ==================== Estilos Generales ==================== */
 body {
     font-family: var(--font-family);
     margin: 0;
@@ -19,7 +19,7 @@ body {
     margin: 0 auto;
 }
 
-/* Header */
+/* ==================== Header ==================== */
 header {
     background: var(--primary-color);
     color: #fff;
@@ -92,8 +92,7 @@ nav ul li a:hover {
     transform: rotate(-45deg) translate(5px, -5px);
 }
 
-/* Hero Section */
-/* Estilos para la sección Inicio */
+/* ==================== Hero Section ==================== */
 .hero {
     background: url('imagenes/cardaci-1.jpg') no-repeat center center/cover, #333;
     color: #fff;
@@ -110,7 +109,7 @@ nav ul li a:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Fondo oscuro para mejorar la legibilidad */
+    background: rgba(0, 0, 0, 0.5);
     z-index: 1;
 }
 
@@ -151,36 +150,16 @@ nav ul li a:hover {
 
 /* Animaciones */
 @keyframes fadeInDown {
-    0% {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    0% { opacity: 0; transform: translateY(-20px); }
+    100% { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes fadeInUp {
-    0% {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
 }
 
-/* Animación de botones */
-@keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-    100% { transform: scale(1); }
-}
-
-/* Servicios */
-/* Estilos para la sección Servicios */
+/* ==================== Servicios ==================== */
 .services {
     padding: 80px 0;
     background: #f9f9f9;
@@ -240,9 +219,7 @@ nav ul li a:hover {
     line-height: 1.6;
 }
 
-
-/* Nosotros */
-/* Estilos para la sección Nosotros */
+/* ==================== Nosotros ==================== */
 .about {
     padding: 80px 0;
     background: #fff;
@@ -338,41 +315,52 @@ nav ul li a:hover {
     transform: translateY(-2px);
 }
 
-/* Cotización */
+/* ==================== Sección Cotización ==================== */
 .quote {
-    padding: 50px 0;
+    padding: 80px 0;
     background: #fff;
     text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .quote h2 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.quote .subtitle {
+    font-size: 1.2rem;
+    color: #666;
     margin-bottom: 40px;
+    font-weight: 500;
 }
 
 .quote form {
-    max-width: 600px;
+    max-width: 800px;
     margin: 0 auto;
-    display: flex;
-    flex-direction: column;
     background: #fff;
-    padding: 30px;
+    padding: 40px;
     border-radius: 12px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
-.quote form label {
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
     font-size: 14px;
     font-weight: 500;
     color: #555;
     margin-bottom: 8px;
 }
 
-.quote form input,
-.quote form textarea {
+.form-group input,
+.form-group textarea {
     width: 100%;
     padding: 12px;
-    margin-bottom: 20px;
     border: 1px solid #ddd;
     border-radius: 8px;
     font-size: 14px;
@@ -380,83 +368,102 @@ nav ul li a:hover {
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.quote form input:focus,
-.quote form textarea:focus {
+.form-group input:focus,
+.form-group textarea:focus {
     border-color: var(--primary-color);
     outline: none;
     box-shadow: 0 0 8px rgba(255, 102, 0, 0.2);
 }
 
-.quote form textarea {
+.form-group textarea {
     resize: vertical;
     min-height: 120px;
 }
 
-.quote form button {
+.quote .btn {
     background: var(--primary-color);
     color: #fff;
-    padding: 12px 20px;
+    padding: 15px 30px;
     border: none;
     border-radius: 8px;
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
     transition: background 0.3s ease, transform 0.2s ease;
 }
 
-.quote form button:hover {
+.quote .btn:hover {
     background: #e65c00;
     transform: translateY(-2px);
 }
 
-.quote form button:active {
+.quote .btn:active {
     transform: translateY(0);
 }
 
-.quote form button[disabled] {
-    background: #ccc;
-    cursor: not-allowed;
-    transform: none;
-}
-
-/* Ubicaciones */
+/* ==================== Ubicaciones ==================== */
 .locations {
-    padding: 50px 0;
+    padding: 80px 0;
     background: #f9f9f9;
     text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .locations h2 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.locations .subtitle {
+    font-size: 1.2rem;
+    color: #666;
     margin-bottom: 40px;
+    font-weight: 500;
 }
 
 .location-list {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
 }
 
 .location-item {
-    width: 45%;
-    margin-bottom: 20px;
     background: #fff;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.location-item h3 {
-    margin-bottom: 10px;
+.location-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.15);
+}
+
+.location-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.location-header h3 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin: 0;
+}
+
+.location-header i {
+    font-size: 1.5rem;
     color: var(--primary-color);
 }
 
 .location-item p {
-    margin: 5px 0;
+    font-size: 1rem;
     color: #555;
+    margin: 5px 0;
 }
 
-/* Estilos para los mapas */
 .map-container {
     margin-top: 15px;
     border-radius: 10px;
@@ -470,7 +477,7 @@ nav ul li a:hover {
     border: 0;
 }
 
-/* Localidades */
+/* ==================== Localidades ==================== */
 .localities {
     padding: 50px 0;
     background: #fff;
@@ -491,7 +498,7 @@ nav ul li a:hover {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px; /* Espacio entre elementos */
+    gap: 20px;
 }
 
 .locality-list ul li {
@@ -502,7 +509,7 @@ nav ul li a:hover {
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    width: calc(33.333% - 20px); /* Tres columnas en pantallas grandes */
+    width: calc(33.333% - 20px);
 }
 
 .locality-list ul li:hover {
@@ -521,7 +528,7 @@ nav ul li a:hover {
     color: #333;
 }
 
-/* Estilos para el footer */
+/* ==================== Footer ==================== */
 footer {
     background: #222;
     color: #fff;
@@ -614,7 +621,7 @@ footer {
     color: rgba(255, 255, 255, 0.6);
 }
 
-/* Estilos para el modal */
+/* ==================== Modal ==================== */
 .modal {
     display: none;
     position: fixed;
@@ -674,7 +681,7 @@ footer {
     color: var(--primary-color);
 }
 
-/* Responsive Design */
+/* ==================== Responsive Design ==================== */
 @media (max-width: 768px) {
     .hamburger {
         display: flex;
@@ -719,13 +726,7 @@ footer {
     .locality-list ul li {
         width: 45%;
     }
-}
 
-@media (max-width: 480px) {
-    .locality-list ul li {
-        width: 100%; /* Una columna en pantallas pequeñas */
-    }
-}@media (max-width: 768px) {
     .footer-content {
         flex-direction: column;
         align-items: center;
@@ -740,8 +741,7 @@ footer {
     .footer-social .social-icons {
         justify-content: center;
     }
-}
-@media (max-width: 768px) {
+
     .about-content {
         flex-direction: column;
         text-align: center;
@@ -758,27 +758,59 @@ footer {
     .about-features li {
         justify-content: center;
     }
-}@media (max-width: 768px) {
+
     .service-item {
         width: calc(50% - 20px);
+    }
+
+    .location-item {
+        width: 100%;
     }
 }
 
 @media (max-width: 480px) {
-    .service-item {
+    .service-item, .locality-list ul li {
         width: 100%;
     }
-}@media (max-width: 768px) {
-    .hero h1 {
-        font-size: 2.5rem;
+}
+@media (max-width: 768px) {
+    .quote form {
+        padding: 20px;
     }
 
-    .hero .subtitle {
-        font-size: 1.2rem;
+    .quote h2 {
+        font-size: 2rem;
     }
 
-    .hero .btn {
+    .quote .subtitle {
         font-size: 1rem;
-        padding: 12px 24px;
+    }
+}/* ==================== Responsive Design ==================== */
+@media (max-width: 768px) {
+    /* Ajustes para el formulario */
+    .quote form {
+        padding: 20px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* Ajustes para los mapas */
+    .location-list {
+        grid-template-columns: 1fr;
+    }
+
+    .location-item {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .map-container iframe {
+        height: 150px;
     }
 }
